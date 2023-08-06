@@ -1,0 +1,110 @@
+.Caps {
+  width: 40%;
+  height: 35vh;
+  border: solid black 1px;
+  overflow: hidden;
+  position: relative;
+  margin-left: 1vw;
+}
+
+.contenedorImgPequeñas {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin: 1px;
+  font-size: 2vw;
+}
+
+.contenedorImgPequeñas div {
+  margin: 3vw;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  transition: transform 3.3s;
+  cursor: pointer;
+  position: relative;
+}
+
+.img:hover {
+  transform: scale(1.1);
+}
+
+.TituloLink {
+  width: 10vw;
+  height: 13vh;
+  background-color: rgb(240, 241, 241);
+  text-align: center;
+  font-family: Helvética;
+  font-style: oblique black;
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.6;
+  cursor: pointer;
+  color: black;
+}
+.TituloLink:hover {
+  opacity: 0.7;
+}
+
+.contenedorImgGrandes {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin: 1px;
+  font-size: 2vw;
+  min-width: 400px;
+}
+.Mens {
+  width: 45%;
+  height: 55vh;
+  border: solid black 1px;
+  overflow: hidden;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.Woman {
+  width: 45%;
+  height: 55vh;
+  border: solid black 1px;
+  overflow: hidden;
+}
+.TituloLinkGrande {
+  width: 10vw;
+  height: 13vh;
+  background-color: rgb(229, 230, 230);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  margin-top: -35vh;
+  margin-left: 16vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.6;
+  cursor: pointer;
+  text-align: center;
+  font-family: Helvética;
+  font-style: oblique black;
+  color: black;
+}
+.TituloLinkGrande:hover {
+  opacity: 0.7;
+}
+.contenedorImgGrandes .Mens,
+.contenedorImgGrandes .Woman {
+  margin: 1vw;
+}
+.contenedorImgPequeñas div {
+  margin: 1vw;
+}
+
+.sadsa {
+  background-color: rgb(241, 245, 248);
+}

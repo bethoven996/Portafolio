@@ -1,0 +1,39 @@
+.ButtonSing {
+  background-color: black;
+  font-family: Helvetica, sans-serif;
+  color: white;
+  width: 9vw;
+  height: 8vh;
+  cursor: pointer;
+  margin: 3vw;
+}
+.ButtonSing:hover {
+  background-color: white;
+  color: black;
+}
+.ButtonGoogle {
+  background-color: rgb(117, 65, 202);
+  font-family: Helvetica, sans-serif;
+  color: white;
+  width: 11vw;
+  height: 8vh;
+  cursor: pointer;
+  margin: 3vw;
+}
+.ButtonGoogle:hover {
+  background-color: white;
+  color: rgb(117, 65, 202);
+}
+.btnSingUp {
+  width: 85%;
+  margin-left: 2vw;
+  height: 8vh;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  margin: 3vw;
+}
+.btnSingUp:hover {
+  background-color: white;
+  color: black;
+}

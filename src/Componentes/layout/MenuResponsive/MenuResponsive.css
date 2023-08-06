@@ -1,0 +1,17 @@
+.ContenedorResposive {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  width: 190px;
+  height: 260px;
+  background-color: rgb(255, 252, 252);
+  padding: 10px;
+  border: solid 2px black;
+  position: absolute;
+  margin-top: 13vh;
+  right: 2vw;
+  z-index: 100;
+}
+.ContenedorResposive Button:hover {
+  background-color: rgb(230, 229, 231);
+}
