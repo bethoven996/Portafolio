@@ -9,7 +9,12 @@ function CheckoutContainer() {
 
   return (
     <div>
-      <Checkout cart={cart} DeleteItem={DeleteItem} SumarTotal={SumarTotal} />
+      <Checkout
+        AddToCart={AddToCart}
+        cart={cart}
+        DeleteItem={DeleteItem}
+        SumarTotal={SumarTotal}
+      />
     </div>
   );
 }

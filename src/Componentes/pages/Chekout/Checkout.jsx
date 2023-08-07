@@ -1,14 +1,14 @@
 import CartaCheckOut from "../../Comp/CartaCheckOut";
 import CartVentada from "../../layout/CarritoVentada/CartVentada";
-function Checkout({ cart, DeleteItem, SumarTotal }) {
+function Checkout({ AddToCart, cart, DeleteItem, SumarTotal }) {
   if (cart.length === 0) {
     return (
       <h2 style={{ textAlign: "center", fontFamily: "Helvética" }}>
-        YOUR CART IS EMPTY
+        Your Carts is Empty
       </h2>
     );
   }
-  let total = SumarTotal();
+  console.log(cart);
   return (
     <div>
       <div
@@ -67,7 +67,12 @@ function Checkout({ cart, DeleteItem, SumarTotal }) {
       </div>
       {cart.map((item) => {
         return (
-          <CartaCheckOut DeleteItem={DeleteItem} key={item.id} item={item} />
+          <CartaCheckOut
+            AddToCart={AddToCart}
+            DeleteItem={DeleteItem}
+            key={item.id}
+            item={item}
+          />
         );
       })}
 
@@ -79,7 +84,7 @@ function Checkout({ cart, DeleteItem, SumarTotal }) {
           marginLeft: "20%",
         }}
       >
-        TOTAL: {total}$
+        TOTAL: total$
       </h2>
     </div>
   );

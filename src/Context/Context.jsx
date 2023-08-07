@@ -10,7 +10,7 @@ function ContextComponente({ children }) {
         if (producto.id === elemento.id) {
           return {
             ...elemento,
-            cantidad: producto.cantidad,
+            cantidad: elemento.cantidad + producto.cantidad,
           };
         } else {
           return elemento;
@@ -18,7 +18,7 @@ function ContextComponente({ children }) {
       });
       setCart(nuevoArr);
     } else {
-      setCart([...cart, producto]);
+      setCart([...cart, { ...producto, cantidad: producto.cantidad }]);
     }
   };
   const DeleteItem = (id) => {

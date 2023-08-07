@@ -1,8 +1,8 @@
 import { Button } from "@mui/material";
 import { useState } from "react";
 
-function CartaCheckOut({ item, DeleteItem }) {
-  const [contador, setcontador] = useState(0);
+function CartaCheckOut({ item, DeleteItem, AddToCart }) {
+  const [contador, setcontador] = useState(1);
 
   return (
     <div
@@ -38,7 +38,10 @@ function CartaCheckOut({ item, DeleteItem }) {
       >
         <Button
           disabled={contador <= 1}
-          onClick={() => setcontador(contador - 1)}
+          onClick={() => {
+            AddToCart({ ...item, cantidad: contador - 1 });
+            setcontador(contador - 1);
+          }}
           style={{
             width: "2vw",
             height: "3vh",
@@ -48,7 +51,10 @@ function CartaCheckOut({ item, DeleteItem }) {
         </Button>
         <h5>{contador}</h5>
         <Button
-          onClick={() => setcontador(contador + 1)}
+          onClick={() => {
+            AddToCart({ ...item, cantidad: contador + 1 });
+            setcontador(contador + 1);
+          }}
           style={{
             width: "2vw",
             height: "3vh",
