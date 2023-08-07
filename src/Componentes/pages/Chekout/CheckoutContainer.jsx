@@ -5,7 +5,14 @@ import { useContext } from "react";
 import { Context } from "../../../Context/Context";
 import { useState } from "react";
 function CheckoutContainer() {
-  const { AddToCart, cart, DeleteItem, SumarTotal } = useContext(Context);
+  const {
+    AddToCart,
+    cart,
+    DeleteItem,
+    SumarTotal,
+    totalCantidad,
+    EncontrarId,
+  } = useContext(Context);
 
   return (
     <div>
@@ -14,6 +21,8 @@ function CheckoutContainer() {
         cart={cart}
         DeleteItem={DeleteItem}
         SumarTotal={SumarTotal}
+        totalCantidad={totalCantidad}
+        EncontrarId={EncontrarId}
       />
     </div>
   );

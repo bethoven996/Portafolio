@@ -1,6 +1,6 @@
 import CartaCheckOut from "../../Comp/CartaCheckOut";
 import CartVentada from "../../layout/CarritoVentada/CartVentada";
-function Checkout({ AddToCart, cart, DeleteItem, SumarTotal }) {
+function Checkout({ AddToCart, cart, DeleteItem, SumarTotal, EncontrarId }) {
   if (cart.length === 0) {
     return (
       <h2 style={{ textAlign: "center", fontFamily: "Helvética" }}>
@@ -8,7 +8,8 @@ function Checkout({ AddToCart, cart, DeleteItem, SumarTotal }) {
       </h2>
     );
   }
-  console.log(cart);
+  let cantidadEnCarrito = EncontrarId(cart.id);
+  let total = SumarTotal();
   return (
     <div>
       <div
@@ -72,6 +73,7 @@ function Checkout({ AddToCart, cart, DeleteItem, SumarTotal }) {
             DeleteItem={DeleteItem}
             key={item.id}
             item={item}
+            cantidadEnCarrito={cantidadEnCarrito}
           />
         );
       })}
@@ -84,7 +86,7 @@ function Checkout({ AddToCart, cart, DeleteItem, SumarTotal }) {
           marginLeft: "20%",
         }}
       >
-        TOTAL: total$
+        TOTAL: {total}$
       </h2>
     </div>
   );

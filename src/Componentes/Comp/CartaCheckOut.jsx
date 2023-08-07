@@ -1,8 +1,17 @@
 import { Button } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useContext } from "react";
+import { Context } from "../../Context/Context";
 
-function CartaCheckOut({ item, DeleteItem, AddToCart }) {
-  const [contador, setcontador] = useState(1);
+function CartaCheckOut({ item, cantidadEnCarrito = 1 }) {
+  const { DeleteItem, agregarAlCarrito } = useContext(Context);
+  const [contador, setcontador] = useState(cantidadEnCarrito);
+  useEffect(() => {
+    setcontador(cantidadEnCarrito);
+  }, [cantidadEnCarrito]);
+  debugger;
+
+  console.log(item.cantidad);
 
   return (
     <div
@@ -39,7 +48,6 @@ function CartaCheckOut({ item, DeleteItem, AddToCart }) {
         <Button
           disabled={contador <= 1}
           onClick={() => {
-            AddToCart({ ...item, cantidad: contador - 1 });
             setcontador(contador - 1);
           }}
           style={{
@@ -52,7 +60,6 @@ function CartaCheckOut({ item, DeleteItem, AddToCart }) {
         <h5>{contador}</h5>
         <Button
           onClick={() => {
-            AddToCart({ ...item, cantidad: contador + 1 });
             setcontador(contador + 1);
           }}
           style={{
