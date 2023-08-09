@@ -1,6 +1,5 @@
 import CartaCheckOut from "../../Comp/CartaCheckOut";
 import CartVentada from "../../layout/CarritoVentada/CartVentada";
-import Counter from "../../Counter/Counter";
 function Checkout({ AddToCart, cart, DeleteItem, SumarTotal }) {
   if (cart.length === 0) {
     return (
@@ -9,7 +8,6 @@ function Checkout({ AddToCart, cart, DeleteItem, SumarTotal }) {
       </h2>
     );
   }
-  const total = SumarTotal();
 
   return (
     <div>
@@ -74,6 +72,7 @@ function Checkout({ AddToCart, cart, DeleteItem, SumarTotal }) {
             DeleteItem={DeleteItem}
             key={item.id}
             item={item}
+            cantidadEnCarrito={cantidadEnCarrito}
           />
         );
       })}

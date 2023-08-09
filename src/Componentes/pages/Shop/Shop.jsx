@@ -3,7 +3,7 @@ import { productos } from "../../../Productos/productMock";
 import CartaProductos from "../../Comp/CartaProductos";
 import { FadeLoader } from "react-spinners";
 
-function Shop({ items, agregarAlCarrito }) {
+function Shop({ items, agregarAlCarrito, totalCantidad, EncontrarId }) {
   let arr = [1, 2, 3, 4, 5, 6];
   return (
     <div

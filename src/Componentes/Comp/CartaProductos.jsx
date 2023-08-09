@@ -43,7 +43,12 @@ function CartaProductos({ item, agregarAlCarrito }) {
           </CardContent>
         </CardActionArea>
         <CardActions>
-          <Button onClick={() => agregarAlCarrito(item)} size="small">
+          <Button
+            onClick={() => {
+              agregarAlCarrito(item);
+            }}
+            size="small"
+          >
             ADD TO CART
           </Button>
         </CardActions>

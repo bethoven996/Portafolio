@@ -12,7 +12,8 @@ import CartVentada from "../../layout/CarritoVentada/CartVentada";
 function ShopContainer() {
   const [items, setItems] = useState([]);
   const { categoryName } = useParams();
-  const { cart, AddToCart } = useContext(Context);
+  const { cart, AddToCart, agregarAlCarrito, totalCantidad } =
+    useContext(Context);
 
   useEffect(() => {
     let consulta;
@@ -30,10 +31,9 @@ function ShopContainer() {
     });
   }, [categoryName]);
 
-  const agregarAlCarrito = (item, cantidad = 1) => {
+  const agregarAlCarrito = (item) => {
     let data = {
       ...item,
-      cantidad: cantidad,
     };
     AddToCart(data);
     toast.success("Added to cart successfully!", {
@@ -50,8 +50,11 @@ function ShopContainer() {
 
   return (
     <div>
-      <Shop agregarAlCarrito={agregarAlCarrito} items={items} />
-      <ToastContainer />
+      <Shop
+        agregarAlCarrito={agregarAlCarrito}
+        items={items}
+        totalCantidad={totalCantidad}
+      />
     </div>
   );
 }
