@@ -12,8 +12,7 @@ import CartVentada from "../../layout/CarritoVentada/CartVentada";
 function ShopContainer() {
   const [items, setItems] = useState([]);
   const { categoryName } = useParams();
-  const { cart, AddToCart, agregarAlCarrito, totalCantidad } =
-    useContext(Context);
+  const { cart, AddToCart, totalCantidad } = useContext(Context);
 
   useEffect(() => {
     let consulta;
@@ -31,9 +30,10 @@ function ShopContainer() {
     });
   }, [categoryName]);
 
-  const agregarAlCarrito = (item) => {
+  const agregarAlCarrito = (item, cantidad) => {
     let data = {
       ...item,
+      cantidad: cantidad,
     };
     AddToCart(data);
     toast.success("Added to cart successfully!", {
