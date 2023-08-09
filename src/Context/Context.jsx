@@ -1,9 +1,9 @@
 import { createContext, useState } from "react";
 export const Context = createContext();
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
 function ContextComponente({ children }) {
   const [cart, setCart] = useState([]);
+
   const AddToCart = (producto) => {
     let existe = cart.some((elemento) => elemento.id === producto.id);
     if (existe) {
@@ -45,25 +45,22 @@ function ContextComponente({ children }) {
     let producto = cart.find((elemento) => elemento.id === +id);
     return producto?.cantidad;
   };
-  const agregarAlCarrito = (item, cantidad = 1) => {
+  const agregarAlCarr = (item, cantidad) => {
     let datos = {
       ...item,
       cantidad: cantidad,
     };
     AddToCart(datos);
-    console.log(datos);
   };
 
   let data = {
-    contador,
-    setContador,
     cart,
     AddToCart,
     DeleteItem,
     totalCantidad,
     SumarTotal,
     EncontrarId,
-    agregarAlCarrito,
+    agregarAlCarr,
   };
   return <Context.Provider value={data}>{children}</Context.Provider>;
 }

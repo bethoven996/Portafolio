@@ -2,9 +2,12 @@ import { Skeleton, Stack } from "@mui/material";
 import { productos } from "../../../Productos/productMock";
 import CartaProductos from "../../Comp/CartaProductos";
 import { FadeLoader } from "react-spinners";
+import { useContext } from "react";
+import { Context } from "../../../Context/Context";
 
-function Shop({ items, agregarAlCarrito, totalCantidad, EncontrarId }) {
+function Shop({ items, agregarAlCarrito, EncontrarId }) {
   let arr = [1, 2, 3, 4, 5, 6];
+  let CantidadEnCarrito = EncontrarId(items.id);
   return (
     <div
       style={{
@@ -22,6 +25,7 @@ function Shop({ items, agregarAlCarrito, totalCantidad, EncontrarId }) {
                 agregarAlCarrito={agregarAlCarrito}
                 item={item}
                 key={item.id}
+                CantidadEnCarrito={CantidadEnCarrito}
               />
             );
           })

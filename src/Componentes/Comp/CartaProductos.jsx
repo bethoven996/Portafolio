@@ -8,7 +8,7 @@ import {
   Typography,
 } from "@mui/material";
 
-function CartaProductos({ item, agregarAlCarrito }) {
+function CartaProductos({ item, agregarAlCarrito, CantidadEnCarrito = 1 }) {
   return (
     <div style={{ display: "flex", justifyContent: "space-between" }}>
       <Card
@@ -45,7 +45,7 @@ function CartaProductos({ item, agregarAlCarrito }) {
         <CardActions>
           <Button
             onClick={() => {
-              agregarAlCarrito(item);
+              agregarAlCarrito(item, CantidadEnCarrito);
             }}
             size="small"
           >

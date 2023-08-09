@@ -1,9 +1,8 @@
 import { Button } from "@mui/material";
 import { useState } from "react";
-
-function CartaCheckOut({ item, DeleteItem, AddToCart }) {
-  const [contador, setcontador] = useState(1);
-
+import Counter from "../Counter/Counter";
+function CartaCheckOut({ item, DeleteItem, EncontrarId, agregarAlCarr }) {
+  let CantidadEnCarrito = EncontrarId(item.id);
   return (
     <div
       style={{
@@ -27,43 +26,13 @@ function CartaCheckOut({ item, DeleteItem, AddToCart }) {
       <div style={{ fontFamily: "Geneva", width: "20vw" }}>
         <p>{item.title}</p>
       </div>
-      <div
-        style={{
-          fontFamily: "Geneva",
-          display: "flex",
-          justifyContent: "space-evenly",
-          alignItems: "center",
-          width: "15vw",
-        }}
-      >
-        <Button
-          disabled={contador <= 1}
-          onClick={() => {
-            AddToCart({ ...item, cantidad: contador - 1 });
-            setcontador(contador - 1);
-          }}
-          style={{
-            width: "2vw",
-            height: "3vh",
-          }}
-        >
-          -
-        </Button>
-        <h5>{contador}</h5>
-        <Button
-          onClick={() => {
-            AddToCart({ ...item, cantidad: contador + 1 });
-            setcontador(contador + 1);
-          }}
-          style={{
-            width: "2vw",
-            height: "3vh",
-          }}
-        >
-          +
-        </Button>
+      <div>
+        <Counter
+          item={item}
+          agregarAlCarr={agregarAlCarr}
+          CantidadEnCarrito={CantidadEnCarrito}
+        />
       </div>
-
       <div style={{ fontFamily: "Geneva", width: "10vw" }}>
         <p>${item.price}</p>
       </div>

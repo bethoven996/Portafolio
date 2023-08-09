@@ -12,7 +12,7 @@ import CartVentada from "../../layout/CarritoVentada/CartVentada";
 function ShopContainer() {
   const [items, setItems] = useState([]);
   const { categoryName } = useParams();
-  const { cart, AddToCart, totalCantidad } = useContext(Context);
+  const { cart, AddToCart, EncontrarId } = useContext(Context);
 
   useEffect(() => {
     let consulta;
@@ -53,8 +53,9 @@ function ShopContainer() {
       <Shop
         agregarAlCarrito={agregarAlCarrito}
         items={items}
-        totalCantidad={totalCantidad}
+        EncontrarId={EncontrarId}
       />
+      <ToastContainer />
     </div>
   );
 }
