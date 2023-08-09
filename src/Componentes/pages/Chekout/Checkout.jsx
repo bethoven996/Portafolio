@@ -1,5 +1,6 @@
 import CartaCheckOut from "../../Comp/CartaCheckOut";
 import CartVentada from "../../layout/CarritoVentada/CartVentada";
+import Counter from "../../Counter/Counter";
 function Checkout({ AddToCart, cart, DeleteItem, SumarTotal }) {
   if (cart.length === 0) {
     return (
@@ -8,7 +9,8 @@ function Checkout({ AddToCart, cart, DeleteItem, SumarTotal }) {
       </h2>
     );
   }
-  console.log(cart);
+  const total = SumarTotal();
+
   return (
     <div>
       <div
@@ -84,7 +86,7 @@ function Checkout({ AddToCart, cart, DeleteItem, SumarTotal }) {
           marginLeft: "20%",
         }}
       >
-        TOTAL: total$
+        TOTAL: {total}$
       </h2>
     </div>
   );

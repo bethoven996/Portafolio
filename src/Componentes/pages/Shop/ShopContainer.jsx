@@ -30,9 +30,10 @@ function ShopContainer() {
     });
   }, [categoryName]);
 
-  const agregarAlCarrito = (item) => {
+  const agregarAlCarrito = (item, cantidad = 1) => {
     let data = {
       ...item,
+      cantidad: cantidad,
     };
     AddToCart(data);
     toast.success("Added to cart successfully!", {

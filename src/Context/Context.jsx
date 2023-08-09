@@ -3,6 +3,7 @@ export const Context = createContext();
 
 function ContextComponente({ children }) {
   const [cart, setCart] = useState([]);
+  const [contador, setContador] = useState(1);
   const AddToCart = (producto) => {
     let existe = cart.some((elemento) => elemento.id === producto.id);
     if (existe) {
@@ -45,6 +46,8 @@ function ContextComponente({ children }) {
   };
 
   let data = {
+    contador,
+    setContador,
     cart,
     AddToCart,
     DeleteItem,
