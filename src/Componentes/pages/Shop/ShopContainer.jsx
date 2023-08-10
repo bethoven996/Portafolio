@@ -30,7 +30,7 @@ function ShopContainer() {
     });
   }, [categoryName]);
 
-  const agregarAlCarrito = (item, cantidad) => {
+  const agregarAlCarrito = (item, cantidad = 1) => {
     let data = {
       ...item,
       cantidad: cantidad,

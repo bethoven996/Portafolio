@@ -11,7 +11,7 @@ function CheckoutContainer() {
     DeleteItem,
     SumarTotal,
     EncontrarId,
-    agregarAlCarr,
+    totalCantidad,
   } = useContext(Context);
 
   return (
@@ -22,7 +22,7 @@ function CheckoutContainer() {
         DeleteItem={DeleteItem}
         SumarTotal={SumarTotal}
         EncontrarId={EncontrarId}
-        agregarAlCarr={agregarAlCarr}
+        totalCantidad={totalCantidad}
       />
     </div>
   );

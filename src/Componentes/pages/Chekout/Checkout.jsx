@@ -6,7 +6,7 @@ function Checkout({
   DeleteItem,
   SumarTotal,
   EncontrarId,
-  agregarAlCarr,
+  totalCantidad,
 }) {
   if (cart.length === 0) {
     return (
@@ -81,7 +81,7 @@ function Checkout({
             key={item.id}
             item={item}
             EncontrarId={EncontrarId}
-            agregarAlCarr={agregarAlCarr}
+            totalCantidad={totalCantidad}
           />
         );
       })}

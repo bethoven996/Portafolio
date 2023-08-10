@@ -42,7 +42,7 @@ function ContextComponente({ children }) {
     return precio;
   };
   const EncontrarId = (id) => {
-    let producto = cart.find((elemento) => elemento.id === +id);
+    let producto = cart.find((elemento) => elemento.id === id);
     return producto?.cantidad;
   };
   const agregarAlCarr = (item, cantidad) => {

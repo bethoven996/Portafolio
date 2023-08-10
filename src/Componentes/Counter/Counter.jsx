@@ -2,17 +2,13 @@ import { useState, useContext, useEffect } from "react";
 import { Button } from "@mui/material";
 import { Context } from "../../Context/Context";
 
-function Counter({ item, CantidadEnCarrito = 1 }) {
-  const restar = () => {
-    item.cantidad = item.cantidad - 1;
-    console.log(item.cantidad);
-  };
-
+function Counter({ item }) {
+  const { EncontrarId, totalCantidad } = useContext(Context);
+  const [cantidad, setCantidad] = useState(item.cantidad);
   const sumar = () => {
-    item.cantidad = item.cantidad + 1;
-    console.log(item.cantidad);
+    cantidad = item.cantidad;
+    setCantidad(cantidad + 1);
   };
-  let total = sumar();
   return (
     <div>
       <div
@@ -25,8 +21,10 @@ function Counter({ item, CantidadEnCarrito = 1 }) {
         }}
       >
         <Button
-          disabled={item.cantidad <= 1}
-          onClick={restar}
+          disabled={cantidad <= 1}
+          onClick={() => {
+            setCantidad(cantidad - 1), console.log(item);
+          }}
           style={{
             width: "2vw",
             height: "3vh",
@@ -34,9 +32,11 @@ function Counter({ item, CantidadEnCarrito = 1 }) {
         >
           -
         </Button>
-        <h5>{item.cantidad}</h5>
+        <h5>{cantidad}</h5>
         <Button
-          onClick={sumar}
+          onClick={() => {
+            sumar, console.log(item);
+          }}
           style={{
             width: "2vw",
             height: "3vh",
