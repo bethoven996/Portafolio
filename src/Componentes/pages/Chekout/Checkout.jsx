@@ -1,13 +1,7 @@
+import { useEffect } from "react";
 import CartaCheckOut from "../../Comp/CartaCheckOut";
 import CartVentada from "../../layout/CarritoVentada/CartVentada";
-function Checkout({
-  AddToCart,
-  cart,
-  DeleteItem,
-  SumarTotal,
-  EncontrarId,
-  totalCantidad,
-}) {
+function Checkout({ AddToCart, cart, DeleteItem, SumarTotal, EncontrarId }) {
   if (cart.length === 0) {
     return (
       <h2 style={{ textAlign: "center", fontFamily: "Helvética" }}>
@@ -16,7 +10,6 @@ function Checkout({
     );
   }
 
-  const total = SumarTotal();
   return (
     <div>
       <div
@@ -81,7 +74,7 @@ function Checkout({
             key={item.id}
             item={item}
             EncontrarId={EncontrarId}
-            totalCantidad={totalCantidad}
+            SumarTotal={SumarTotal}
           />
         );
       })}
@@ -93,9 +86,7 @@ function Checkout({
           justifyContent: "center",
           marginLeft: "20%",
         }}
-      >
-        TOTAL:{total} $
-      </h2>
+      ></h2>
     </div>
   );
 }
