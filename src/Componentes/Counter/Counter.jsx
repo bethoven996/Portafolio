@@ -3,21 +3,16 @@ import { Button } from "@mui/material";
 import { Context } from "../../Context/Context";
 
 function Counter({ item, CantidadEnCarrito = 1 }) {
-  const { agregarAlCarr } = useContext(Context);
-  const [contador, setContador] = useState(CantidadEnCarrito);
   const restar = () => {
-    if (contador > 1) {
-      setContador(contador - 1);
-      agregarAlCarr(item, contador);
-    }
+    item.cantidad = item.cantidad - 1;
+    console.log(item.cantidad);
   };
 
   const sumar = () => {
-    setContador(contador + 1);
-    agregarAlCarr(item, contador);
+    item.cantidad = item.cantidad + 1;
+    console.log(item.cantidad);
   };
-  console.log(item);
-
+  let total = sumar();
   return (
     <div>
       <div
@@ -30,8 +25,8 @@ function Counter({ item, CantidadEnCarrito = 1 }) {
         }}
       >
         <Button
-          // disabled={contador <= 1}
-          onClick={() => restar()}
+          disabled={item.cantidad <= 1}
+          onClick={restar}
           style={{
             width: "2vw",
             height: "3vh",
@@ -41,7 +36,7 @@ function Counter({ item, CantidadEnCarrito = 1 }) {
         </Button>
         <h5>{item.cantidad}</h5>
         <Button
-          onClick={() => sumar()}
+          onClick={sumar}
           style={{
             width: "2vw",
             height: "3vh",
