@@ -75,7 +75,7 @@ function CartaCheckOut({ item, DeleteItem, EncontrarId, SumarTotal }) {
         <div style={{ fontFamily: "Geneva", width: "10vw" }}>
           <p>${item.price}</p>
         </div>
-        <div style={{ fontFamily: "Geneva", width: "10vw" }}>
+        <div style={{ fontFamily: "Geneva", width: "10vw", zIndex: "1" }}>
           <Button onClick={() => DeleteItem(item.id)}>x</Button>
         </div>
       </div>

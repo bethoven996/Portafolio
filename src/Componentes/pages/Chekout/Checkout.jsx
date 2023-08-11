@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import CartaCheckOut from "../../Comp/CartaCheckOut";
 import CartVentada from "../../layout/CarritoVentada/CartVentada";
 import { Button } from "@mui/material";
+import PaymentForm from "../../layout/PasarelaPagos/PaymentForm";
 function Checkout({ AddToCart, cart, DeleteItem, SumarTotal, EncontrarId }) {
   const [total, setTotal] = useState(SumarTotal());
-
+  const [showPaymentForm, setShowPaymentForm] = useState(false);
   useEffect(() => {
     setTotal(SumarTotal());
   }, [SumarTotal()]);
@@ -106,10 +107,15 @@ function Checkout({ AddToCart, cart, DeleteItem, SumarTotal, EncontrarId }) {
         style={{ fontFamily: "cursive", fontSize: "4vh", textAlign: "center" }}
       >
         Total: ${total}
-        <Button sx={{ margin: "10px" }} variant="contained">
+        <Button
+          onClick={() => setShowPaymentForm(true)}
+          sx={{ margin: "10px" }}
+          variant="contained"
+        >
           Finalizar Compra
         </Button>
       </div>
+      {showPaymentForm && <PaymentForm />}
     </div>
   );
 }
