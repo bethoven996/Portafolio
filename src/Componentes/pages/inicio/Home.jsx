@@ -1,9 +1,43 @@
-import React from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
+import PaymentIcon from "@mui/icons-material/Payment";
 function Home() {
   return (
     <div>
+      <Carousel showThumbs={false} showStatus={false}>
+        <div style={{ height: "40", width: "100%" }}>
+          <img
+            style={{ height: "40vh", width: "100%", border: "solid black 1px" }}
+            src="https://res.cloudinary.com/do9rcgcca/image/upload/v1691716044/online-shopping-on-phone-buy-sell-business-digital-web-banner-application-money-advertising-payment-ecommerce-illustration-search-free-vector_zl9tqn.jpg"
+            alt="Imagen 3"
+          />
+        </div>
+
+        <div style={{ height: "40", width: "100%" }}>
+          <img
+            style={{ height: "40vh", width: "100%", border: "solid black 1px" }}
+            src="https://res.cloudinary.com/do9rcgcca/image/upload/v1691703972/venta-de-promo-invierno-vectorial-banner-web-o-afiche-para-ecommerce-en-l_C3_ADnea-cosm_C3_A9ticos-tienda-moda-belleza-con-dise_C3_B1o-187089966_mkpmbw.jpg"
+            alt="Imagen 2"
+          />
+        </div>
+        <div style={{ height: "40vh", width: "100%" }}>
+          <img
+            style={{ height: "40vh", width: "100%", border: "solid black 1px" }}
+            src="https://res.cloudinary.com/do9rcgcca/image/upload/v1691704024/dise_C3_B1o-de-plantilla-banner-venta-web-gran-o-afiche-para-tienda-cosm_C3_A9ticos-online-ecommerce-vector-fondo-corte-papel-abertura-187679485_lvfboj.jpg"
+            alt="Imagen 1"
+          />
+        </div>
+      </Carousel>
+      {/* <div>
+        <div style={{ width: "15vw", height: "15vh" }}>
+          <PaymentIcon
+            sx={{ fontSize: "35px", cursor: "pointer" }}
+          ></PaymentIcon>
+          <h5>Todas las Tarjetas</h5>
+        </div>
+      </div> */}
       <div>
         <div className="contenedorImgPequeñas">
           <div className="Caps">

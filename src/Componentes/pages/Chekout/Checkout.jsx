@@ -1,12 +1,26 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import CartaCheckOut from "../../Comp/CartaCheckOut";
 import CartVentada from "../../layout/CarritoVentada/CartVentada";
+import { Button } from "@mui/material";
 function Checkout({ AddToCart, cart, DeleteItem, SumarTotal, EncontrarId }) {
+  const [total, setTotal] = useState(SumarTotal());
+
+  useEffect(() => {
+    setTotal(SumarTotal());
+  }, [SumarTotal()]);
+
   if (cart.length === 0) {
     return (
-      <h2 style={{ textAlign: "center", fontFamily: "Helvética" }}>
-        Your Carts is Empty
-      </h2>
+      <div>
+        <h2 style={{ textAlign: "center", fontFamily: "Helvética" }}>
+          Your Carts is Empty
+        </h2>
+        <img
+          style={{ display: "flex", marginLeft: "27%" }}
+          src="https://res.cloudinary.com/do9rcgcca/image/upload/v1691718830/img_sin_rende_jbhixi.jpg"
+          alt=""
+        />
+      </div>
     );
   }
 
@@ -87,6 +101,15 @@ function Checkout({ AddToCart, cart, DeleteItem, SumarTotal, EncontrarId }) {
           marginLeft: "20%",
         }}
       ></h2>
+      <div
+        className="ContenedorTotal"
+        style={{ fontFamily: "cursive", fontSize: "4vh", textAlign: "center" }}
+      >
+        Total: ${total}
+        <Button sx={{ margin: "10px" }} variant="contained">
+          Finalizar Compra
+        </Button>
+      </div>
     </div>
   );
 }

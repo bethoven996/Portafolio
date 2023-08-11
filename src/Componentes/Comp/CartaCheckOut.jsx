@@ -1,11 +1,9 @@
 import { Button } from "@mui/material";
-import { useState } from "react";
-import Counter from "../Counter/Counter";
+import { useEffect, useState } from "react";
+
 function CartaCheckOut({ item, DeleteItem, EncontrarId, SumarTotal }) {
   let CantidadEnCarrito = EncontrarId(item.id);
   const [cantidad, setcantidad] = useState(CantidadEnCarrito);
-
-  console.log(item);
 
   const restar = () => {
     setcantidad(cantidad - 1);
@@ -81,7 +79,6 @@ function CartaCheckOut({ item, DeleteItem, EncontrarId, SumarTotal }) {
           <Button onClick={() => DeleteItem(item.id)}>x</Button>
         </div>
       </div>
-      {total !== null && <div>Total: {total}</div>}
     </div>
   );
 }
