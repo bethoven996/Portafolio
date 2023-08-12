@@ -58,8 +58,8 @@ function MenuResponsive({ MenuResposive }) {
           <Button
             sx={{
               fontFamily: "cursive",
-              marginLeft: "20px",
-              marginTop: "100px",
+              marginLeft: "14px",
+              marginTop: "8vh",
               backgroundColor: "black",
               border: "solid 1px black",
             }}

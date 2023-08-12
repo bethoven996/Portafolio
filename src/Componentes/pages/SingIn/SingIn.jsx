@@ -46,6 +46,7 @@ function SingIn() {
 
   return (
     <div
+      className="contenedorTODO"
       style={{
         display: "flex",
         justifyContent: "space-around",
@@ -54,13 +55,17 @@ function SingIn() {
         marginLeft: "11vw",
       }}
     >
-      <div className="contenedorSingIn">
+      <div
+        style={{ marginTop: "25px", minWidth: "100px" }}
+        className="contenedorSingIn"
+      >
         <form onSubmit={handleSubmitSignIn}>
           <h2 style={{ fontFamily: "Helvética" }}>SING IN</h2>
           <h5 style={{ fontFamily: "Helvética" }}>
             With your email and password or Google
           </h5>
           <Box
+            className="input"
             component="form"
             sx={{
               "& > :not(style)": {
@@ -69,13 +74,15 @@ function SingIn() {
                 display: "flex",
                 flexDirection: "column",
                 margin: "20px",
-                marginLeft: "4vw",
               },
             }}
             noValidate
             autoComplete="off"
           >
             <TextField
+              sx={{
+                width: "100%",
+              }}
               id="standard-basic"
               label="Name"
               variant="standard"
@@ -101,12 +108,23 @@ function SingIn() {
             />
           </Box>
           <div
-            style={{ display: "flex", flexDirection: "row", height: "100vh" }}
+            className="contendorBotones"
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              height: "30vh",
+              flexWrap: "wrap",
+            }}
           >
-            <button type="Submit" className="ButtonSing">
+            <button
+              style={{ fontSize: "90%" }}
+              type="Submit"
+              className="ButtonSing"
+            >
               Sing In
             </button>
             <button
+              style={{ fontSize: "90%" }}
               onClick={() => alert("hola")}
               type="button"
               className="ButtonGoogle"
@@ -117,12 +135,12 @@ function SingIn() {
         </form>
       </div>
       <div
+        className="ContenedorSingUp"
         style={{
+          minWidth: "100px",
           display: "flex",
           justifyContent: "space-around",
           textAlign: "center",
-          marginRight: "10vw",
-          marginLeft: "4vw",
         }}
       >
         <form
@@ -147,6 +165,7 @@ function SingIn() {
             Create an new acount
           </h5>
           <Box
+            className="input"
             component="form"
             sx={{
               "& > :not(style)": {

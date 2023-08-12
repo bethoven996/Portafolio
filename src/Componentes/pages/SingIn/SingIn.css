@@ -37,3 +37,20 @@
   background-color: white;
   color: black;
 }
+@media (max-width: 768px) {
+  .contenedorTODO {
+    flex-direction: column;
+    align-items: center;
+  }
+  .ButtonSing,
+  .ButtonGoogle {
+    width: 100%; /* Ancho completo en pantallas pequeñas */
+    margin-top: "30px";
+  }
+  .input {
+    width: 100%;
+  }
+  .btnSingUp {
+    width: 300px; /* Ancho completo en pantallas pequeñas */
+  }
+}

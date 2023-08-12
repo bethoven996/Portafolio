@@ -1,19 +1,19 @@
 import { Button } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function CartaCheckOut({ item, DeleteItem, EncontrarId, SumarTotal }) {
-  let CantidadEnCarrito = EncontrarId(item.id);
-  const [cantidad, setcantidad] = useState(CantidadEnCarrito);
+  const [cantidad, setCantidad] = useState(EncontrarId(item.id));
 
   const restar = () => {
-    setcantidad(cantidad - 1);
+    setCantidad((prevCantidad) => prevCantidad - 1);
     item.cantidad = cantidad - 1;
   };
+
   const sumar = () => {
-    setcantidad(cantidad + 1);
+    setCantidad((prevCantidad) => prevCantidad + 1);
     item.cantidad = cantidad + 1;
   };
-  let total = SumarTotal();
+
   return (
     <div>
       <div
@@ -25,7 +25,6 @@ function CartaCheckOut({ item, DeleteItem, EncontrarId, SumarTotal }) {
           padding: "10px",
           width: "80%",
           marginLeft: "10%",
-          height: "30vh",
         }}
       >
         <div style={{ fontFamily: "Geneva", width: "10vw" }}>
@@ -38,38 +37,37 @@ function CartaCheckOut({ item, DeleteItem, EncontrarId, SumarTotal }) {
         <div style={{ fontFamily: "Geneva", width: "20vw" }}>
           <p>{item.title}</p>
         </div>
-        <div>
-          <div>
-            <div
+        <div
+          style={{ fontFamily: "Geneva", width: "15vw", textAlign: "center" }}
+        >
+          <div
+            style={{
+              fontFamily: "Geneva",
+              display: "flex",
+              justifyContent: "space-evenly",
+              alignItems: "center",
+            }}
+          >
+            <Button
+              disabled={item.cantidad <= 1}
+              onClick={restar}
               style={{
-                fontFamily: "Geneva",
-                display: "flex",
-                justifyContent: "space-evenly",
-                alignItems: "center",
-                width: "15vw",
+                width: "2vw",
+                height: "3vh",
               }}
             >
-              <Button
-                disabled={item.cantidad <= 1}
-                onClick={restar}
-                style={{
-                  width: "2vw",
-                  height: "3vh",
-                }}
-              >
-                -
-              </Button>
-              <h5>{CantidadEnCarrito}</h5>
-              <Button
-                onClick={sumar}
-                style={{
-                  width: "2vw",
-                  height: "3vh",
-                }}
-              >
-                +
-              </Button>
-            </div>
+              -
+            </Button>
+            <h5>{cantidad}</h5>
+            <Button
+              onClick={sumar}
+              style={{
+                width: "2vw",
+                height: "3vh",
+              }}
+            >
+              +
+            </Button>
           </div>
         </div>
         <div style={{ fontFamily: "Geneva", width: "10vw" }}>

@@ -14,7 +14,7 @@ function CartVentada({ showCarrito }) {
         style={{ display: showCarrito ? "block" : "none" }}
       >
         {cart.length === 0 ? (
-          <h4
+          <h5
             style={{
               fontFamily: "Helvética",
               display: "flex",
@@ -23,7 +23,7 @@ function CartVentada({ showCarrito }) {
             }}
           >
             Your Cart is Empty
-          </h4>
+          </h5>
         ) : (
           cart.map((item) => (
             <div
@@ -37,8 +37,8 @@ function CartVentada({ showCarrito }) {
             >
               <img
                 style={{
-                  height: "11vh",
-                  width: "5vw",
+                  height: "9vh",
+                  width: "4vw",
                   maxHeight: "11vh",
                   maxWidth: "5vw",
                   objectFit: "cover",
@@ -46,17 +46,33 @@ function CartVentada({ showCarrito }) {
                 src={item.img}
                 alt=""
               />
-
-              <h4 style={{ fontFamily: "Helvética", marginLeft: "2vw" }}>
+              <h6
+                style={{
+                  fontFamily: "Helvética",
+                  marginLeft: "2vw",
+                  width: "3vw",
+                }}
+              >
                 {item.title}
-              </h4>
-              <h5>${item.price}</h5>
+              </h6>
+              <h6
+                style={{
+                  fontFamily: "Helvética",
+                  marginLeft: "2vw",
+                  width: "3vw",
+                  marginTop: "2vh",
+                }}
+              >
+                ${item.price}
+              </h6>
             </div>
           ))
         )}
 
         <Link to={"/Checkout"}>
-          <button className="btnCheck">GO TO CHECKOUT</button>
+          <button style={{ height: "10vh" }} className="btnCheck">
+            GO TO CHECKOUT
+          </button>
         </Link>
       </div>
     </div>

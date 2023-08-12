@@ -1,0 +1,34 @@
+.name {
+  width: 40%;
+}
+.LastName {
+  width: 40%;
+}
+.contNames {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  font-family: "Courier New", Courier, monospace;
+}
+.ContendorForm {
+  background-color: aliceblue;
+}
+.contendorDatosTarjeta {
+  padding: 20px;
+  font-family: "Courier New", Courier, monospace;
+  display: flex;
+  flex-wrap: wrap;
+}
+.CodeSegurity {
+  width: 30%;
+}
+.CreditCardNumber {
+  width: 80%;
+}
+.Expiracion {
+  width: 30%;
+  margin-left: 5vw;
+}
+.FooterModal {
+  background-color: aliceblue;
+}
