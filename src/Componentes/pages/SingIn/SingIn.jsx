@@ -2,7 +2,20 @@ import { Box, Button, TextField } from "@mui/material";
 import "./SingIn.css";
 import * as Yup from "yup";
 import { useFormik } from "formik";
-function SingIn() {
+function SingIn({}) {
+  const openGoogleSignIn = () => {
+    const googlePopup = window.open(
+      "https://accounts.google.com/login",
+      "googlePopup",
+      "width=500,height=600"
+    );
+
+    if (googlePopup) {
+      googlePopup.focus();
+    } else {
+      alert("Por favor, habilita las ventanas emergentes para continuar.");
+    }
+  };
   const {
     handleSubmit: handleSubmitSignIn,
     handleChange: handleChangeSignIn,
@@ -125,7 +138,7 @@ function SingIn() {
             </button>
             <button
               style={{ fontSize: "90%" }}
-              onClick={() => alert("hola")}
+              onClick={() => openGoogleSignIn()}
               type="button"
               className="ButtonGoogle"
             >

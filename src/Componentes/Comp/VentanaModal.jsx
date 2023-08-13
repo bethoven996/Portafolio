@@ -15,9 +15,9 @@ function VentanaModal({ total, show, handleClose, cart }) {
     Swal.fire({
       position: "top-center",
       icon: "success",
-      title: "Your purchase was successful",
+      title: `Your purchase was successful`,
       showConfirmButton: false,
-      timer: 1500,
+      timer: 2500,
     }).then(() => {
       navigate("/");
     });
