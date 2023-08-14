@@ -1,8 +1,18 @@
 import { Button } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-function CartaCheckOut({ item, DeleteItem, EncontrarId, SumarTotal }) {
+function CartaCheckOut({
+  item,
+  DeleteItem,
+  EncontrarId,
+  SumarTotal,
+  setTotal,
+}) {
   const [cantidad, setCantidad] = useState(EncontrarId(item.id));
+
+  useEffect(() => {
+    setTotal(SumarTotal());
+  }, [SumarTotal()]);
 
   const restar = () => {
     setCantidad((prevCantidad) => prevCantidad - 1);

@@ -73,12 +73,12 @@ function Checkout({ AddToCart, cart, DeleteItem, SumarTotal, EncontrarId }) {
         {cart.map((item) => {
           return (
             <CartaCheckOut
-              AddToCart={AddToCart}
               DeleteItem={DeleteItem}
               key={item.id}
               item={item}
               EncontrarId={EncontrarId}
               SumarTotal={SumarTotal}
+              setTotal={setTotal}
             />
           );
         })}
