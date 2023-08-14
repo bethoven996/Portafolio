@@ -1,48 +1,79 @@
 import { Skeleton, Stack } from "@mui/material";
-import { productos } from "../../../Productos/productMock";
 import CartaProductos from "../../Comp/CartaProductos";
-import { FadeLoader } from "react-spinners";
-import { useContext } from "react";
-import { Context } from "../../../Context/Context";
 
 function Shop({ items, agregarAlCarrito, EncontrarId }) {
+  const CantidadEnCarrito = EncontrarId(items.id);
   let arr = [1, 2, 3, 4, 5, 6];
-  let CantidadEnCarrito = EncontrarId(items.id);
+  const categorias = {};
+  items.forEach((item) => {
+    if (!categorias[item.category]) {
+      categorias[item.category] = [];
+    }
+    categorias[item.category].push(item);
+  });
+
   return (
     <div
       style={{
-        width: "100%",
         display: "flex",
-        justifyContent: "space-evenly",
-        flexWrap: "wrap",
-        paddingTop: "20px",
+        flexDirection: "column",
+        alignItems: "center",
       }}
     >
-      {items.length > 0
-        ? items.map((item) => {
-            return (
-              <CartaProductos
-                agregarAlCarrito={agregarAlCarrito}
-                item={item}
-                key={item.id}
-                CantidadEnCarrito={CantidadEnCarrito}
-              />
-            );
-          })
-        : arr.map((elemento) => (
-            <Stack
-              sx={{
+      {Object.entries(categorias).map(([categoria, productosCategoria]) => (
+        <div
+          key={categoria}
+          style={{
+            width: "100%",
+            marginBottom: "20px",
+          }}
+        >
+          <h1
+            style={{
+              fontFamily: "Courier New",
+              marginTop: "10px",
+              textAlign: "center",
+              fontSize: "10vh",
+              textDecoration: "underline",
+            }}
+          >
+            {categoria}
+          </h1>
+          {items.length === 0 ? (
+            arr.map((elemento) => (
+              <Stack
+                sx={{
+                  display: "flex",
+                  margin: "10px",
+                  justifyContent: "flex-start",
+                }}
+                spacing={1}
+                key={elemento}
+              >
+                <Skeleton variant="rectangular" width={240} height={225} />
+                <Skeleton variant="rounded" width={240} height={90} />
+              </Stack>
+            ))
+          ) : (
+            <div
+              style={{
                 display: "flex",
-                justifyContent: "space-between",
-                margin: "10px",
+                flexWrap: "wrap",
+                justifyContent: "flex-start",
               }}
-              spacing={1}
-              key={elemento}
             >
-              <Skeleton variant="rectangular" width={240} height={225} />
-              <Skeleton variant="rounded" width={240} height={90} />
-            </Stack>
-          ))}
+              {productosCategoria.map((producto) => (
+                <CartaProductos
+                  agregarAlCarrito={agregarAlCarrito}
+                  item={producto}
+                  key={producto.id}
+                  CantidadEnCarrito={CantidadEnCarrito}
+                />
+              ))}
+            </div>
+          )}
+        </div>
+      ))}
     </div>
   );
 }
