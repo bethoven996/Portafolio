@@ -3,7 +3,7 @@ import CartaCheckOut from "../../Comp/CartaCheckOut";
 import CartVentada from "../../layout/CarritoVentada/CartVentada";
 import { Button } from "@mui/material";
 import VentanaModal from "../../Comp/VentanaModal";
-function Checkout({ AddToCart, cart, DeleteItem, SumarTotal, EncontrarId }) {
+function Checkout({ cart, DeleteItem, SumarTotal, EncontrarId }) {
   const [total, setTotal] = useState(SumarTotal());
   const [show, setShow] = useState(false);
 

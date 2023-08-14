@@ -4,10 +4,8 @@ import { useParams } from "react-router-dom";
 import { dataBase } from "../../../Productos/dataBaseEcomer";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { Context } from "../../../Context/Context";
-import { productos } from "../../../Productos/productMock";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import CartVentada from "../../layout/CarritoVentada/CartVentada";
 
 function ShopContainer() {
   const [items, setItems] = useState([]);

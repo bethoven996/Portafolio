@@ -2,7 +2,7 @@ import "./Home.css";
 import { Link } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-import PaymentIcon from "@mui/icons-material/Payment";
+
 function Home() {
   return (
     <div>
@@ -30,14 +30,7 @@ function Home() {
           />
         </div>
       </Carousel>
-      {/* <div>
-        <div style={{ width: "15vw", height: "15vh" }}>
-          <PaymentIcon
-            sx={{ fontSize: "35px", cursor: "pointer" }}
-          ></PaymentIcon>
-          <h5>Todas las Tarjetas</h5>
-        </div>
-      </div> */}
+
       <div>
         <div className="contenedorImgPequeñas">
           <div className="Caps">

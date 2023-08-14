@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -9,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 function VentanaModal({ total, show, handleClose, cart }) {
   const newCart = cart;
-  console.log(newCart);
+
   const navigate = useNavigate();
   const Alert = () => {
     Swal.fire({
