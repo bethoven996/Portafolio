@@ -105,6 +105,45 @@
   margin: 1vw;
 }
 
-.sadsa {
-  background-color: rgb(241, 245, 248);
+@media screen and (max-width: 600px) {
+  .Caps {
+    width: 40%;
+    height: 35vh;
+    border: solid black 1px;
+    overflow: hidden;
+    position: relative;
+    margin-left: 1vw;
+    display: flex;
+  }
+
+  .contenedorImgPequeñas {
+    display: flex;
+    width: 100%;
+    margin: 1px;
+    font-size: 2vw;
+  }
+  .contenedorImgGrandes {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 1px;
+    font-size: 2vw;
+    min-width: 400px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .Mens {
+    width: 45%;
+    height: 300px;
+    border: solid black 1px;
+    overflow: hidden;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .Woman {
+    width: 45%;
+    height: 300px;
+    border: solid black 1px;
+    overflow: hidden;
+  }
 }
