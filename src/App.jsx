@@ -5,7 +5,6 @@ import "./App.css";
 import SingInContainer from "./Componentes/pages/SingIn/SingInContainer";
 import ShopContainer from "./Componentes/pages/Shop/ShopContainer";
 import CheckoutContainer from "./Componentes/pages/Chekout/CheckoutContainer";
-
 import ContextComponente from "./Context/Context";
 function App() {
   return (
@@ -19,7 +18,6 @@ function App() {
             <Route path="/Shop" element={<ShopContainer />} />
             <Route path="/Shop/:categoryName" element={<ShopContainer />} />
           </Route>
-          <Route path="*" element={<h2> Not -- Found</h2>} />
         </Routes>
       </ContextComponente>
     </BrowserRouter>

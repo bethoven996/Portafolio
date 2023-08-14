@@ -5,10 +5,11 @@ import Form from "react-bootstrap/Form";
 import "./VentanaModal.css";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { Context } from "../../Context/Context";
+import { useContext } from "react";
 
-function VentanaModal({ total, show, handleClose, cart }) {
-  const newCart = cart;
-
+function VentanaModal({ total, show, handleClose }) {
   const navigate = useNavigate();
   const Alert = () => {
     Swal.fire({
@@ -67,6 +68,36 @@ function VentanaModal({ total, show, handleClose, cart }) {
             >
               <Form.Label>Ext Date</Form.Label>
               <Form.Control type="date" placeholder="0" />
+            </Form.Group>
+          </Form.Group>
+          <h5 style={{ fontFamily: "Courier New", textAlign: "center" }}>
+            Datos De Envio
+          </h5>
+          <Form.Group className="ContenedorDireccion">
+            <Form.Group
+              className="Country"
+              controlId="exampleForm.ControlInput1"
+            >
+              <Form.Label>Country</Form.Label>
+              <Form.Control type="text" placeholder="Country" />
+            </Form.Group>
+            <Form.Group className="City" controlId="exampleForm.ControlInput1">
+              <Form.Label>City</Form.Label>
+              <Form.Control type="text" placeholder="City" />
+            </Form.Group>
+            <Form.Group
+              className="Direccion"
+              controlId="exampleForm.ControlInput1"
+            >
+              <Form.Label>Direccion</Form.Label>
+              <Form.Control type="text" placeholder="Direccion" />
+            </Form.Group>
+            <Form.Group
+              className="CodePostal"
+              controlId="exampleForm.ControlInput1"
+            >
+              <Form.Label>Code Postal</Form.Label>
+              <Form.Control type="text" placeholder="Code Postal" />
             </Form.Group>
           </Form.Group>
         </Form>

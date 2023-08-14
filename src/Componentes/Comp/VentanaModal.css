@@ -32,3 +32,18 @@
 .FooterModal {
   background-color: aliceblue;
 }
+.ContenedorDireccion {
+  padding: 20px;
+  font-family: "Courier New", Courier, monospace;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0;
+}
+.Country {
+  width: 40%;
+  margin-right: 10px;
+}
+.CodePostal {
+  width: 30%;
+  margin-left: 5vw;
+}

@@ -5,11 +5,21 @@ import LocalMallIcon from "@mui/icons-material/LocalMall";
 import Badge from "@mui/material/Badge";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
-import Admin from "../../admin";
 import { useContext } from "react";
 import { Context } from "../../../Context/Context";
+
+import { useState } from "react";
 function Navbar({ showMenu, showCart }) {
   const { cart } = useContext(Context);
+  const [inputValue, setInputValue] = useState("");
+  const handleSearchSubmit = (event) => {
+    if (event.key === "Enter") {
+      return `/Shop/${inputValue}`;
+    }
+  };
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  };
   return (
     <div className="Navbar">
       <Link to={"/"}>
@@ -22,9 +32,14 @@ function Navbar({ showMenu, showCart }) {
         <input
           className="inputSearch"
           type="text"
-          placeholder="Search Products ej: Shoes"
+          placeholder="Search Products ej: shoes"
+          value={inputValue}
+          onChange={handleInputChange}
+          onKeyDown={handleSearchSubmit}
         />
-        <SearchIcon sx={{ fontSize: "30px" }} className="searchIcon" />
+        <Link to={`Shop/${inputValue}`}>
+          <SearchIcon sx={{ fontSize: "30px" }} className="searchIcon" />
+        </Link>
       </div>
       <div className="ButtonCoteiner">
         <Link to={"/Shop"}>

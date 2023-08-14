@@ -11,7 +11,6 @@ function ShopContainer() {
   const [items, setItems] = useState([]);
   const { categoryName } = useParams();
   const { cart, AddToCart, EncontrarId } = useContext(Context);
-
   useEffect(() => {
     let consulta;
     let ref = collection(dataBase, "productos");
