@@ -7,7 +7,7 @@ function Home() {
   return (
     <div>
       <Carousel showThumbs={false} showStatus={false}>
-        <div style={{ marginTop: "10px", height: "40", width: "100%" }}>
+        <div style={{ marginTop: "20px", height: "40", width: "100%" }}>
           <img
             style={{ height: "40vh", width: "100%", border: "solid black 1px" }}
             src="https://res.cloudinary.com/do9rcgcca/image/upload/v1691716044/online-shopping-on-phone-buy-sell-business-digital-web-banner-application-money-advertising-payment-ecommerce-illustration-search-free-vector_zl9tqn.jpg"
