@@ -46,6 +46,7 @@ function Shop({ items, agregarAlCarrito, EncontrarId }) {
                   display: "flex",
                   margin: "10px",
                   justifyContent: "flex-start",
+                  marginLeft: "30vw",
                 }}
                 spacing={1}
                 key={elemento}

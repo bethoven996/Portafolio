@@ -10,7 +10,14 @@ import {
 
 function CartaProductos({ item, agregarAlCarrito, CantidadEnCarrito = 1 }) {
   return (
-    <div style={{ display: "flex", justifyContent: "space-between" }}>
+    <div
+      style={{
+        marginLeft: "10vw",
+        display: "flex",
+        justifyContent: "space-between",
+        marginRight: "-10vw",
+      }}
+    >
       <Card
         sx={{
           width: 250,
