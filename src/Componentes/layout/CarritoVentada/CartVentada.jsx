@@ -2,9 +2,10 @@ import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import "./CartVentana.css";
 import { Context } from "../../../Context/Context";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
+import { useRef, useState } from "react";
 
-function CartVentada({ showCarrito }) {
+function CartVentada({ showCarrito, onCloseCart }) {
   const { cart } = useContext(Context);
 
   return (

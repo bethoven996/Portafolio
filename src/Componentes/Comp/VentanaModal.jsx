@@ -5,9 +5,6 @@ import Form from "react-bootstrap/Form";
 import "./VentanaModal.css";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
-import { Context } from "../../Context/Context";
-import { useContext } from "react";
 
 function VentanaModal({ total, show, handleClose }) {
   const navigate = useNavigate();
@@ -104,7 +101,7 @@ function VentanaModal({ total, show, handleClose }) {
 
         <Modal.Footer className="FooterModal">
           <Button onClick={Alert} variant="primary">
-            PAY:$ {total}
+            PAY:${total}
           </Button>
         </Modal.Footer>
       </Modal>
