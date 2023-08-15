@@ -132,8 +132,6 @@
     margin: 1px;
     font-size: 2vw;
     min-width: 400px;
-    flex-direction: column;
-    align-items: center;
   }
   .Mens {
     width: 45%;
@@ -148,5 +146,24 @@
     height: 250px;
     border: solid black 1px;
     overflow: hidden;
+  }
+  .TituloLinkGrande {
+    width: 10vw;
+    height: 13vh;
+    background-color: rgb(229, 230, 230);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    margin-top: -25vh;
+    margin-left: 16vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.6;
+    cursor: pointer;
+    text-align: center;
+    font-family: Helvética;
+    font-style: oblique black;
+    color: black;
   }
 }
