@@ -146,6 +146,7 @@
     height: 250px;
     border: solid black 1px;
     overflow: hidden;
+    margin-right: 5px;
   }
   .TituloLinkGrande {
     width: 10vw;
