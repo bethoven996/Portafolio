@@ -132,6 +132,7 @@
     margin: 1px;
     font-size: 2vw;
     min-width: 400px;
+    margin-right: 2px;
   }
   .Mens {
     width: 45%;
@@ -146,7 +147,6 @@
     height: 250px;
     border: solid black 1px;
     overflow: hidden;
-    margin-right: 5px;
   }
   .TituloLinkGrande {
     width: 10vw;
