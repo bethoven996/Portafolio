@@ -5,6 +5,7 @@
   overflow: hidden;
   position: relative;
   margin-left: 1vw;
+  max-width: 300px;
 }
 
 .contenedorImgPequeñas {
@@ -59,7 +60,6 @@
   width: 100%;
   margin: 1px;
   font-size: 2vw;
-  min-width: 400px;
 }
 .Mens {
   width: 45%;
@@ -108,12 +108,14 @@
 @media screen and (max-width: 600px) {
   .Caps {
     width: 40%;
-    height: 35vh;
+    height: 30vh;
     border: solid black 1px;
     overflow: hidden;
     position: relative;
     margin-left: 1vw;
     display: flex;
+    flex-grow: 1;
+    max-width: 50%;
   }
 
   .contenedorImgPequeñas {
@@ -121,6 +123,7 @@
     width: 100%;
     margin: 1px;
     font-size: 2vw;
+    flex-wrap: wrap;
   }
   .contenedorImgGrandes {
     display: flex;
@@ -134,7 +137,7 @@
   }
   .Mens {
     width: 45%;
-    height: 300px;
+    height: 250px;
     border: solid black 1px;
     overflow: hidden;
     margin-left: 5px;
@@ -142,7 +145,7 @@
   }
   .Woman {
     width: 45%;
-    height: 300px;
+    height: 250px;
     border: solid black 1px;
     overflow: hidden;
   }
