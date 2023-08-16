@@ -1,13 +1,15 @@
-import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import "./CartVentana.css";
 import { Context } from "../../../Context/Context";
-import { useContext, useEffect } from "react";
-import { useRef, useState } from "react";
+import { useContext } from "react";
 
-function CartVentada({ showCarrito, onCloseCart }) {
+function CartVentada({ showCarrito, setShowCarrito }) {
   const { cart } = useContext(Context);
-
+  const Close = () => {
+    if (showCarrito === true) {
+      return setShowCarrito(false);
+    }
+  };
   return (
     <div>
       <div
@@ -71,7 +73,11 @@ function CartVentada({ showCarrito, onCloseCart }) {
         )}
 
         <Link to={"/Checkout"}>
-          <button style={{ height: "10vh" }} className="btnCheck">
+          <button
+            onClick={() => Close()}
+            style={{ height: "10vh" }}
+            className="btnCheck"
+          >
             GO TO CHECKOUT
           </button>
         </Link>

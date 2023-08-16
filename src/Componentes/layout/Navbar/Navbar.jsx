@@ -4,22 +4,28 @@ import SearchIcon from "@mui/icons-material/Search";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
 import Badge from "@mui/material/Badge";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useContext, useEffect } from "react";
 import { Context } from "../../../Context/Context";
-
 import { useState } from "react";
+// import { dataBase } from "../../../Productos/dataBaseEcomer";
+// import { getDocs, collection } from "firebase/firestore";
 function Navbar({ showMenu, showCart }) {
   const { cart } = useContext(Context);
+  const navigate = useNavigate();
   const [inputValue, setInputValue] = useState("");
+
   const handleSearchSubmit = (event) => {
     if (event.key === "Enter") {
-      return `/Shop/${inputValue}`;
+      setInputValue(inputValue.toLowerCase());
+      navigate(`/Shop/${inputValue}`);
     }
   };
   const handleInputChange = (event) => {
-    setInputValue(event.target.value);
+    setInputValue(inputValue.toLowerCase());
+    handleSearchSubmit(event);
   };
+
   return (
     <div className="Navbar">
       <Link to={"/"}>
@@ -32,11 +38,12 @@ function Navbar({ showMenu, showCart }) {
         <input
           className="inputSearch"
           type="text"
-          placeholder="Search Products ej: shoes"
+          placeholder="Search Products eg: shoes"
           value={inputValue}
-          onChange={handleInputChange}
+          onChange={(e) => setInputValue(e.target.value)}
           onKeyDown={handleSearchSubmit}
         />
+
         <Link to={`Shop/${inputValue}`}>
           <SearchIcon sx={{ fontSize: "30px" }} className="searchIcon" />
         </Link>
@@ -88,3 +95,19 @@ function Navbar({ showMenu, showCart }) {
 }
 
 export default Navbar;
+
+// useEffect(() => {
+//   let ref = collection(dataBase, "productos");
+//   getDocs(ref).then((res) => {
+//     let newArray = res.docs.map((item) => {
+//       return { ...item.data() };
+//     });
+//     setItem(newArray);
+//   });
+//   let existe = item.map((i) => {
+//     return i.category;
+//   });
+//   let similitudes = existe.filter((item) => item != inputValue);
+//   console.log(similitudes);
+// }, [inputValue]);
+// const [item, setItem] = useState([]);

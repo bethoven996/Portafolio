@@ -2,7 +2,12 @@ import { Button } from "@mui/material";
 import "./MenuResponsive.css";
 import { Link } from "react-router-dom";
 
-function MenuResponsive({ MenuResposive }) {
+function MenuResponsive({ MenuResposive, setMenuResponsive }) {
+  const Close = () => {
+    if (MenuResposive === true) {
+      return setMenuResponsive(false);
+    }
+  };
   return (
     <div>
       <div
@@ -11,6 +16,7 @@ function MenuResponsive({ MenuResposive }) {
       >
         <Link to={"/"}>
           <Button
+            onClick={() => Close()}
             sx={{
               fontFamily: "cursive",
               margin: "5px",
@@ -26,6 +32,7 @@ function MenuResponsive({ MenuResposive }) {
         </Link>
         <Link to={"/Shop"}>
           <Button
+            onClick={() => Close()}
             sx={{
               fontFamily: "cursive",
               margin: "5px",
@@ -41,6 +48,7 @@ function MenuResponsive({ MenuResposive }) {
         </Link>
         <Link to={"/SingIn"}>
           <Button
+            onClick={() => Close()}
             sx={{
               fontFamily: "cursive",
               margin: "5px",
@@ -56,6 +64,7 @@ function MenuResponsive({ MenuResposive }) {
         </Link>
         <Link to={"/Checkout"}>
           <Button
+            onClick={() => Close()}
             sx={{
               fontFamily: "cursive",
               marginLeft: "14px",

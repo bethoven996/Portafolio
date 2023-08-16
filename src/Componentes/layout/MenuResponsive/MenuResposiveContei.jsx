@@ -15,8 +15,11 @@ function MenuResposiveContei() {
 
   return (
     <div>
-      <MenuResponsive MenuResposive={MenuResposive} />
-      <CartVentada showCarrito={showCarrito} />
+      <MenuResponsive
+        MenuResposive={MenuResposive}
+        setMenuResponsive={setMenuResponsive}
+      />
+      <CartVentada showCarrito={showCarrito} setShowCarrito={setShowCarrito} />
       <Navbar showMenu={showMenu} showCart={showCart} />
       <Outlet />
     </div>

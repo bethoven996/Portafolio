@@ -6,6 +6,7 @@ import SingInContainer from "./Componentes/pages/SingIn/SingInContainer";
 import ShopContainer from "./Componentes/pages/Shop/ShopContainer";
 import CheckoutContainer from "./Componentes/pages/Chekout/CheckoutContainer";
 import ContextComponente from "./Context/Context";
+import NotFound from "./Componentes/layout/NotFound/NotFound";
 function App() {
   return (
     <BrowserRouter>
