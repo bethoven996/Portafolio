@@ -22,7 +22,7 @@
   height: 35px;
   outline: none;
   align-items: center;
-  font-family: cursive;
+  font-family: Arial, Helvetica;
 }
 .searchContainer {
   display: flex;

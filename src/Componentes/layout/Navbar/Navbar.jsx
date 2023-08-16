@@ -17,13 +17,10 @@ function Navbar({ showMenu, showCart }) {
 
   const handleSearchSubmit = (event) => {
     if (event.key === "Enter") {
-      setInputValue(inputValue.toLowerCase());
-      navigate(`/Shop/${inputValue}`);
+      const trimmedInputValue = inputValue.trim().toLowerCase();
+      setInputValue(trimmedInputValue);
+      navigate(`/Shop/${trimmedInputValue}`);
     }
-  };
-  const handleInputChange = (event) => {
-    setInputValue(inputValue.toLowerCase());
-    handleSearchSubmit(event);
   };
 
   return (
