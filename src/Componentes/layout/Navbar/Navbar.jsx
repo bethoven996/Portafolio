@@ -35,7 +35,7 @@ function Navbar({ showMenu, showCart }) {
         <input
           className="inputSearch"
           type="text"
-          placeholder="Search Products eg: shoes"
+          placeholder="Search eg: shoes"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           onKeyDown={handleSearchSubmit}
