@@ -18,7 +18,7 @@ function MenuResponsive({ MenuResposive, setMenuResponsive }) {
           <Button
             onClick={() => Close()}
             sx={{
-              fontFamily: "cursive",
+              fontFamily: "Helvetica",
               margin: "5px",
               width: "90%",
               height: "30px",
@@ -34,7 +34,7 @@ function MenuResponsive({ MenuResposive, setMenuResponsive }) {
           <Button
             onClick={() => Close()}
             sx={{
-              fontFamily: "cursive",
+              fontFamily: "Helvetica",
               margin: "5px",
               width: "90%",
               height: "30px",
@@ -50,7 +50,7 @@ function MenuResponsive({ MenuResposive, setMenuResponsive }) {
           <Button
             onClick={() => Close()}
             sx={{
-              fontFamily: "cursive",
+              fontFamily: "Helvetica",
               margin: "5px",
               width: "90%",
               height: "30px",
@@ -66,7 +66,7 @@ function MenuResponsive({ MenuResposive, setMenuResponsive }) {
           <Button
             onClick={() => Close()}
             sx={{
-              fontFamily: "cursive",
+              fontFamily: "Helvetica",
               marginLeft: "14px",
               marginTop: "8vh",
               backgroundColor: "black",
