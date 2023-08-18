@@ -94,7 +94,7 @@ function Checkout({ cart, DeleteItem, SumarTotal, EncontrarId }) {
         <div
           className="ContenedorTotal"
           style={{
-            fontFamily: "cursive",
+            fontFamily: "Helvetica",
             fontSize: "4vh",
             textAlign: "center",
           }}
@@ -102,7 +102,15 @@ function Checkout({ cart, DeleteItem, SumarTotal, EncontrarId }) {
           Total: ${total}
           <Button
             onClick={handleShow}
-            sx={{ margin: "10px" }}
+            sx={{
+              backgroundColor: "black",
+              color: "white",
+              margin: "10px",
+              "&:hover": {
+                backgroundColor: "white",
+                color: "black",
+              },
+            }}
             variant="contained"
           >
             Finalizar Compra
