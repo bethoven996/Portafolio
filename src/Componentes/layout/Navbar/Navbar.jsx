@@ -8,21 +8,41 @@ import { Link, useNavigate } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import { Context } from "../../../Context/Context";
 import { useState } from "react";
-// import { dataBase } from "../../../Productos/dataBaseEcomer";
-// import { getDocs, collection } from "firebase/firestore";
+import { dataBase } from "../../../Productos/dataBaseEcomer";
+import { getDocs, collection } from "firebase/firestore";
+import Swal from "sweetalert2";
+
 function Navbar({ showMenu, showCart }) {
   const { cart } = useContext(Context);
   const navigate = useNavigate();
   const [inputValue, setInputValue] = useState("");
 
-  const handleSearchSubmit = (event) => {
+  const handleSearchSubmit = async (event) => {
     if (event.key === "Enter") {
       const trimmedInputValue = inputValue.trim().toLowerCase();
       setInputValue(trimmedInputValue);
-      navigate(`/Shop/${trimmedInputValue}`);
+
+      let ref = collection(dataBase, "productos");
+      const res = await getDocs(ref);
+      let newArray = res.docs.map((item) => {
+        return { ...item.data() };
+      });
+      const categoriesArray = newArray.map((elemento) => elemento.category);
+      let categoriasFiltradas = categoriesArray.filter(
+        (producto) => producto === trimmedInputValue
+      );
+
+      if (categoriasFiltradas.length === 0) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: `We did not find any category with that name "${inputValue}"`,
+        });
+      } else {
+        navigate(`/Shop/${trimmedInputValue}`);
+      }
     }
   };
-
   return (
     <div className="Navbar">
       <Link to={"/"}>
@@ -92,19 +112,3 @@ function Navbar({ showMenu, showCart }) {
 }
 
 export default Navbar;
-
-// useEffect(() => {
-//   let ref = collection(dataBase, "productos");
-//   getDocs(ref).then((res) => {
-//     let newArray = res.docs.map((item) => {
-//       return { ...item.data() };
-//     });
-//     setItem(newArray);
-//   });
-//   let existe = item.map((i) => {
-//     return i.category;
-//   });
-//   let similitudes = existe.filter((item) => item != inputValue);
-//   console.log(similitudes);
-// }, [inputValue]);
-// const [item, setItem] = useState([]);
