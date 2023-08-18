@@ -6,7 +6,7 @@ import { Carousel } from "react-responsive-carousel";
 function Home() {
   return (
     <div>
-      {/* <Carousel showThumbs={false} showStatus={false}>
+      <Carousel showThumbs={false} showStatus={false}>
         <div style={{ marginTop: "20px", height: "40", width: "100%" }}>
           <img
             style={{ height: "40vh", width: "100%", border: "solid black 1px" }}
@@ -29,7 +29,7 @@ function Home() {
             alt="Imagen 1"
           />
         </div>
-      </Carousel> */}
+      </Carousel>
 
       <div>
         <div className="contenedorImgPequeñas">
