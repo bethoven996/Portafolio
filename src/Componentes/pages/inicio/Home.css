@@ -169,8 +169,4 @@
     font-style: oblique black;
     color: black;
   }
-  .Carrusel {
-    max-height: 25vh;
-    overflow: hidden;
-  }
 }
