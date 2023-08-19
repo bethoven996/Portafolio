@@ -173,11 +173,4 @@
     max-height: 25vh;
     overflow: hidden;
   }
-
-  .Carrusel .contIMG img {
-    height: auto;
-    height: 100%;
-    width: 100%;
-    z-index: 100000;
-  }
 }
