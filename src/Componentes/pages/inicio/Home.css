@@ -104,7 +104,9 @@
 .contenedorImgPequeñas div {
   margin: 1vw;
 }
-
+.contIMG {
+  height: 35vh;
+}
 @media screen and (max-width: 600px) {
   .Caps {
     width: 40%;
@@ -166,5 +168,16 @@
     font-family: Helvética;
     font-style: oblique black;
     color: black;
+  }
+  .Carrusel {
+    max-height: 25vh;
+    overflow: hidden;
+  }
+
+  .Carrusel .contIMG img {
+    height: auto;
+    height: 100%;
+    width: 100%;
+    z-index: 100000;
   }
 }
