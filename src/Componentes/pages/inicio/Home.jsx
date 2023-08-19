@@ -7,10 +7,13 @@ function Home() {
   return (
     <div>
       <Carousel className="Carrusel" showThumbs={false} showStatus={false}>
-        <div className="contIMG" style={{ marginTop: "20px", width: "100%" }}>
+        <div
+          className="contIMG"
+          style={{ marginTop: "20px", width: "100%", height: "30vh" }}
+        >
           <img
             className="contIMG"
-            style={{ height: "35vh", width: "100%", border: "solid black 1px" }}
+            style={{ height: "30vh", width: "100%", border: "solid black 1px" }}
             src="https://res.cloudinary.com/do9rcgcca/image/upload/v1691716044/online-shopping-on-phone-buy-sell-business-digital-web-banner-application-money-advertising-payment-ecommerce-illustration-search-free-vector_zl9tqn.jpg"
             alt="Imagen 3"
           />
@@ -18,17 +21,20 @@ function Home() {
 
         <div
           className="contIMG"
-          style={{ marginTop: "20px", height: "40", width: "100%" }}
+          style={{ marginTop: "20px", height: "30vh", width: "100%" }}
         >
           <img
-            style={{ height: "35vh", width: "100%", border: "solid black 1px" }}
+            style={{ height: "30vh", width: "100%", border: "solid black 1px" }}
             src="https://res.cloudinary.com/do9rcgcca/image/upload/v1691703972/venta-de-promo-invierno-vectorial-banner-web-o-afiche-para-ecommerce-en-l_C3_ADnea-cosm_C3_A9ticos-tienda-moda-belleza-con-dise_C3_B1o-187089966_mkpmbw.jpg"
             alt="Imagen 2"
           />
         </div>
-        <div className="contIMG" style={{ marginTop: "20px", width: "100%" }}>
+        <div
+          className="contIMG"
+          style={{ marginTop: "20px", width: "100%", height: "30vh" }}
+        >
           <img
-            style={{ height: "35vh", width: "100%", border: "solid black 1px" }}
+            style={{ height: "30vh", width: "100%", border: "solid black 1px" }}
             src="https://res.cloudinary.com/do9rcgcca/image/upload/v1691704024/dise_C3_B1o-de-plantilla-banner-venta-web-gran-o-afiche-para-tienda-cosm_C3_A9ticos-online-ecommerce-vector-fondo-corte-papel-abertura-187679485_lvfboj.jpg"
             alt="Imagen 1"
           />
